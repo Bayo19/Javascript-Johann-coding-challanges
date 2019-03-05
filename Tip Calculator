@@ -1,0 +1,41 @@
+// *******************
+// Coding Challenge
+// ******************
+
+// My solution
+
+finalAmount = [];
+actualTip = [];
+
+let tipCalc = function(bills){
+    if (bills < 50){
+        return bills + (bills * 0.2);
+    } else if(bills > 50 && bills < 200){
+        return bills + (bills * 0.15);
+    } else if (bills > 200){
+        return bills + (bills * 0.1);
+    }
+    return bills;
+}
+let tipItself = function(bill){
+    if (bill < 50){
+        return bill * 0.2;
+    } else if(bill > 50 && bill < 200){
+        return bill * 0.15;
+    } else if (bill > 200){
+        return bill * 0.1;
+    }
+}
+
+finalAmount.push(tipCalc(124));
+finalAmount.push(tipCalc(48));
+finalAmount.push(tipCalc(268));
+
+// Using Math.round to give an integer instead of the initial fractional result
+actualTip.push(Math.round(tipItself(124)));
+actualTip.push(Math.round(tipItself(48)));
+actualTip.push(Math.round(tipItself(268)));
+
+
+console.log(finalAmount);
+console.log(actualTip);
